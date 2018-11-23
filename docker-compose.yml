@@ -1,0 +1,25 @@
+# fujihalab-notebook
+version: '3'
+services:
+  env:
+    # imageはtenserflow-notebook:latestを用いる
+    # pipで何か追加したいときにはdockerfileを書く必要アリ
+    image: jupyter/tensorflow-notebook:latest
+    user: root
+    # ___下記の設定はとりあえず。よく読んで決める___
+    environment:
+      LANG: C.UTF-8
+      #   NB_UID: 1000
+      #   NB_GID: 100
+      #   GRANT_SUDO: "yes"
+    # データ継承　どっかーの中とフォルダを共有するパスの指定。
+    volumes:
+      # jovyanって何
+      - "./work:/home/jovyan/work"
+    expose:
+      - 8888
+    ports:
+      - 8888:8888
+        # restart: unress-stopped
+    #  command: start.sh 
+
