@@ -12,14 +12,14 @@ services:
       #   NB_UID: 1000
       #   NB_GID: 100
       #   GRANT_SUDO: "yes"
-    # データ継承　どっかーの中とフォルダを共有するパスの指定。
     volumes:
-      # jovyanって何
+     # jovyanって何 -> jupyter(木星)の住民,jovyanくん。
+     # データ継承　どっかーの中とフォルダを共有するパスの指定。
       - "./work:/home/jovyan/work"
     expose:
       - 8888
     ports:
       - 8888:8888
-        # restart: unress-stopped
-    #  command: start.sh 
+    # restart: unress-stopped
+    # command: start.sh 
 
